@@ -21,6 +21,28 @@ class CreateFailedJobsTable extends Migration
             $table->longText('exception');
             $table->timestamp('failed_at')->useCurrent();
         });
+
+        Schema::create('form', function (Blueprint $table) {
+            $table->id();
+            $table->string('name');
+            $table->string('cedula')->unique();
+            $table->string('address');
+            $table->string('phone');
+        });
+
+        Schema::create('product', function (Blueprint $table) {
+            $table->id();
+            $table->string('product_name');
+            $table->string('detail');
+            $table->string('stock');
+            $table->string('price');
+
+        });
+
+        Schema::create('sales', function (Blueprint $table) {
+            $table->id();
+            $table->string('namber_sales');           
+        });
     }
 
     /**
