@@ -22,7 +22,7 @@ class CreateFailedJobsTable extends Migration
             $table->timestamp('failed_at')->useCurrent();
         });
 
-        Schema::create('form', function (Blueprint $table) {
+        Schema::create('customer_data', function (Blueprint $table) {
             $table->id();
             $table->string('name');
             $table->string('cedula')->unique();
